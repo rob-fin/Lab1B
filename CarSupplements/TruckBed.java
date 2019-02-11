@@ -1,9 +1,15 @@
 package CarSupplements;
 
+/**
+ * Models a truck bed that can be used by Scanias.
+ */
 public class TruckBed {
     private double wagonAngle;
     private double truckSpeed;
 
+    /**
+     * Instantiates a TruckBed.
+     */
     public TruckBed() {
         this.wagonAngle = 0;
         this.truckSpeed = 0;

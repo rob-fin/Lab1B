@@ -4,7 +4,9 @@ import CarSupplements.*;
 import java.awt.*;
 import java.awt.geom.Point2D;
 
-
+/**
+ * Models a general Car that more specific Cars can extend.
+ */
 public abstract class Car implements Moveable {
     private final int nrDoors;
     private double currentSpeed;
@@ -186,6 +188,10 @@ public abstract class Car implements Moveable {
         return currentSpeed;
     }
 
+    /**
+     * Sets the speed of the Car.
+     * @param speed The speed to change to.
+     */
     public void setCurrentSpeed(double speed) {
         this.currentSpeed = speed;
     }
@@ -204,8 +210,17 @@ public abstract class Car implements Moveable {
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
     }
 
+    /**
+     * Returns the speed factor of the Car.
+     * @return A double with the speed factor of the Car.
+     */
     public abstract double speedFactor();
 
+    /**
+     * Enters a service station.
+     * @param s The service station to enter.
+     * @return true for success, false otherwise.
+     */
     public boolean enter(ServiceStation s) {
         try {
             s.load(this);
@@ -217,16 +232,31 @@ public abstract class Car implements Moveable {
 
     }
 
+    /**
+     * Sets the Car's loaded state
+     * @param b true if it is being loaded, false if it's being unloaded.
+     */
     public void setLoaded(boolean b) {
         isLoaded = b;
     }
 
+    /**
+     * Gets the Car's loaded status.
+     * @return true if it is loaded, false if it is not.
+     */
     public boolean getLoaded() {
         return isLoaded;
     }
 
+    /**
+     * enum type modelling the four cardinal directions.
+     */
     public enum Direction {EAST, NORTH, WEST, SOUTH}
 
+    /**
+     * Returns the current direction of the car.
+     * @return Direction type with the direction.
+     */
     public Direction getDirection() {
         return direction;
     }

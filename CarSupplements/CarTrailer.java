@@ -4,7 +4,13 @@ import Cars.*;
 import java.awt.geom.Point2D;
 import java.util.Stack;
 
+/**
+ * Models a car trailer used by Car Transports.
+ */
 public class CarTrailer {
+    /**
+     * Enum modelling the two positions of the ramp of the trailer.
+     */
     public enum Mode {
         UP, DOWN
     }
@@ -13,6 +19,10 @@ public class CarTrailer {
     private Stack<SmallCar> cars;
     private Mode ramp;
     double currentSpeed = 0;
+
+    /**
+     * Instantiates a new CarTrailer
+     */
     public CarTrailer() {
         ramp = Mode.DOWN;
         cars = new Stack<>();
@@ -67,7 +77,8 @@ public class CarTrailer {
     }
 
     /**
-     * @return the ramp
+     * Returns the position of the ramp
+     * @return the ramp's position
      */
     public Mode getRamp() {
         return ramp;
@@ -81,10 +92,18 @@ public class CarTrailer {
         this.ramp = ramp;
     }
 
+    /**
+     * Returns the current speed of the CarTrailer
+     * @return A double with the current speed
+     */
     public double getCurrentSpeed() {
         return currentSpeed;
     }
 
+    /**
+     * Sets the current speed of the car trailer
+     * @param currentSpeed A double with the speed to set to.
+     */
     public void setCurrentSpeed(double currentSpeed) {
         this.currentSpeed = currentSpeed;
     }
