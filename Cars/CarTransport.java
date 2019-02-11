@@ -35,6 +35,10 @@ public class CarTransport extends Car {
         return carTrailer.unloadCar();
     }
 
+    /**
+     * Returns the trailer full of carsK
+     * @return the trailer
+     */
     public CarTrailer getCarTrailer(){
         return this.carTrailer;
     }
