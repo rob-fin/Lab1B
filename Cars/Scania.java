@@ -3,7 +3,7 @@ package Cars;
 import CarSupplements.*;
 import java.awt.*;
 
-public class Scania extends SmallCar {
+public class Scania extends Car {
     private TruckBed wagon;
 
     public Scania() {

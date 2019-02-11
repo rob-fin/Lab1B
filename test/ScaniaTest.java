@@ -37,5 +37,5 @@ public class ScaniaTest {
         assertEquals(scania.getWagon().getWagonAngle(), 0.0, 0);
     }
 
-
+    
 }
