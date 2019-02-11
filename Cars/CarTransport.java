@@ -3,9 +3,15 @@ package Cars;
 import CarSupplements.*;
 import java.awt.*;
 
+/**
+ * Models a vehicle that can model Cars.
+ */
 public class CarTransport extends Car {
     private CarTrailer carTrailer;
 
+    /**
+     * Instantiates a CarTransport
+     */
     public CarTransport() {
         super(2, 800, 0, Color.RED, "CarTransport");
         carTrailer = new CarTrailer();

@@ -3,10 +3,16 @@ package Cars;
 import CarSupplements.*;
 import java.awt.*;
 
+/**
+ * Models the specific Car Saab95.
+ */
 public class Saab95 extends SmallCar {
 
     private boolean turboOn;
 
+    /**
+     * Instantiates a Saab95.
+     */
     public Saab95() {
         super(2, 125, 0, Color.red, "Saab95");
         turboOn = false;

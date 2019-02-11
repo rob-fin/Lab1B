@@ -3,9 +3,15 @@ package Cars;
 import CarSupplements.*;
 import java.awt.*;
 
+/**
+ * Models a Scania truck.
+ */
 public class Scania extends Car {
     private TruckBed wagon;
 
+    /**
+     * Instantiates a Scania.
+     */
     public Scania() {
         super(4, 700, 0, Color.white, "Scania");
         startEngine();
