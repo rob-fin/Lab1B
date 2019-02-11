@@ -11,6 +11,10 @@ public class CarTransport extends Car {
         carTrailer = new CarTrailer();
     }
 
+    /**
+     * Calculates the speed factor which is engine power with factor 0.8
+     * @return returns the speed factor.
+     */
     @Override
     public double speedFactor() {
         return getEnginePower() * 0.8;

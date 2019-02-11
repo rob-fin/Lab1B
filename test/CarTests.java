@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
-import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.Assert.*;
 

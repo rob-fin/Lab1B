@@ -20,7 +20,10 @@ public class Scania extends Car {
         return this.wagon;
     }
 
-
+    /**
+     * Calculates the speed factor which is just the engine power.
+     * @return returns the speed factor.
+     */
     public double speedFactor() {
         return getEnginePower();
     }
