@@ -1,4 +1,4 @@
-package CarSupplements;
+epackage CarSupplements;
 
 import Cars.*;
 
@@ -13,7 +13,10 @@ public class ServiceStation<T extends Car>  {
         cars = new LinkedList<>();
     }
 
-
+    /**
+     * Loads cars into the station
+     * @param car car to be loaded
+     */
     public void load(T car) {
         if (cars.size() >= MAX_CARS) {
             throw new IllegalStateException("Service station at full capacity");
@@ -21,6 +24,10 @@ public class ServiceStation<T extends Car>  {
         cars.add(car);
     }
 
+    /**
+     * Unloads a car and return it
+     * @return the unloaded car
+     */
     public T unload() {
         if (cars.size() == 0) {
             throw new IllegalStateException("No cars to unload");
@@ -28,7 +35,10 @@ public class ServiceStation<T extends Car>  {
         return cars.remove();
     }
 
-
+    /**
+     * Returns the amount of cars
+     * @return amount of cars
+     */
     public int getLoad() {
         return cars.size();
     }
