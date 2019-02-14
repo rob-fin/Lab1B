@@ -41,9 +41,9 @@ public class CarView extends JFrame{
     private JButton stopButton = new JButton("Stop all cars");
 
     // Constructor
-    public CarView(String framename, CarController cc){
+    public CarView(String frameName, CarController cc){
         this.carC = cc;
-        initComponents(framename);
+        initComponents(frameName);
     }
 
     // Sets everything in place and fits everything
@@ -55,8 +55,6 @@ public class CarView extends JFrame{
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         this.add(drawPanel);
-
-
 
         SpinnerModel spinnerModel =
                 new SpinnerNumberModel(0, //initial value
@@ -88,12 +86,10 @@ public class CarView extends JFrame{
         this.add(controlPanel);
         controlPanel.setBackground(Color.CYAN);
 
-
         startButton.setBackground(Color.blue);
         startButton.setForeground(Color.green);
         startButton.setPreferredSize(new Dimension(X/5-15,200));
         this.add(startButton);
-
 
         stopButton.setBackground(Color.red);
         stopButton.setForeground(Color.black);
