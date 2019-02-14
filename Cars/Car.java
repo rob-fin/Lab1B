@@ -13,7 +13,7 @@ public abstract class Car implements Moveable {
     private double enginePower;
     private Color color;
     private final String modelName;
-    private Point2D.Double position;
+    private Point position;
     /**
      * The current direction of the SuperStuff.Car.
      */
@@ -35,14 +35,14 @@ public abstract class Car implements Moveable {
         this.currentSpeed = currentSpeed;
         this.color = color;
         this.modelName = modelName;
-        this.position = new Point2D.Double();
+        this.position = new Point();
         this.direction = Direction.NORTH;
     }
 
     /**
      * @param position The position to change to
      */
-    public void setPosition(Point2D.Double position) {
+    public void setPosition(Point position) {
         this.position = position;
     }
 
@@ -85,7 +85,7 @@ public abstract class Car implements Moveable {
      * Starts the engine
      */
     public void startEngine() {
-        currentSpeed = 0.1;
+        currentSpeed = 1;
     }
 
     /**
@@ -160,8 +160,8 @@ public abstract class Car implements Moveable {
      *
      * @return A reference to a new Point2D.Double representing the current position of the SuperStuff.Car.
      */
-    public Point2D.Double getCurrentPosition() {
-        return new Point2D.Double(position.getX(), position.getY());
+    public Point getCurrentPosition() {
+        return new Point(position.x, position.y);
     }
 
     /**

@@ -1,6 +1,8 @@
 package CarSupplements;
 
 import Cars.*;
+
+import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Stack;
 
@@ -51,7 +53,7 @@ public class CarTrailer {
 
         Car car = cars.pop();
         // Move car relatively close to the CarTransport
-        Point2D.Double pos = car.getCurrentPosition();
+        Point pos = car.getCurrentPosition();
         pos.x -= 1;
         pos.y -= 1;
         car.setPosition(pos);
@@ -70,7 +72,7 @@ public class CarTrailer {
      *
      * @param p position to be changed to
      */
-    public void setCarPos(Point2D.Double p) {
+    public void setCarPos(Point p) {
         for (Car c : cars)
             c.setPosition(p);
 

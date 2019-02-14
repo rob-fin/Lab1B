@@ -86,9 +86,9 @@ public class CarTests {
 
     @Test
     public void testPosition() {
-        Point2D.Double pos = new Point2D.Double();
-        pos.x = 5.0;
-        pos.y = 7.0;
+        Point pos = new Point();
+        pos.x = 5;
+        pos.y = 7;
         volvo.setPosition(pos);
         assertEquals(volvo.getCurrentPosition(), pos);
     }
