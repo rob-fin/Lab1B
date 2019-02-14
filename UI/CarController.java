@@ -47,8 +47,8 @@ public class CarController {
         public void actionPerformed(ActionEvent e) {
             for (Car car : cars) {
                 car.move();
-                int x = (int) Math.round(car.getCurrentPosition().getX());
-                int y = (int) Math.round(car.getCurrentPosition().getY());
+                int x = Math.round(car.getCurrentPosition().x);
+                int y = Math.round(car.getCurrentPosition().y);
                 frame.drawPanel.moveit(x, y);
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
