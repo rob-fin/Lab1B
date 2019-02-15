@@ -24,12 +24,22 @@ public class CarController {
     private CarView frame;
     // A list of cars, modify if needed
     private ArrayList<Car> cars;
+    private int gasAmount;
 
     public CarController(String name){
         cars = new ArrayList<>();
         frame = new CarView(name, this);
         timer = new Timer(delay, new TimerListener());
+        gasAmount = 0;
 
+    }
+
+    public void setGasAmount(int gasAmount) {
+        this.gasAmount = gasAmount;
+    }
+
+    public void addCar(Car car){
+        cars.add(car);
     }
 
 
@@ -53,10 +63,9 @@ public class CarController {
     }
 
     // Calls the gas method for each car once
-    void gas(int amount) {
-        double gas = ((double) amount) / 100;
-        for (Car car : cars
-                ) {
+    void gas() {
+        double gas = ((double) gasAmount) / 100;
+        for (Car car : cars) {
             car.gas(gas);
         }
     }
