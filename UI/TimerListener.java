@@ -12,7 +12,9 @@ import java.util.ArrayList;
  * new features with the class being alone
  */
 public class TimerListener implements ActionListener{
+    // This is only a reference to the CarView in RunUI
     private CarView frame;
+    // This is only a reference to the  cars in carController
     private ArrayList<Car> cars;
 
     TimerListener(ArrayList<Car> cars, CarView frame) {
