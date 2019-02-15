@@ -11,10 +11,12 @@ import java.awt.event.ActionListener;
  * It initializes with being center on the screen and attaching it's controller in it's state.
  * It communicates with the Controller by calling methods of it when an action fires of in
  * each of it's components.
+ *
+ * This class should only be responsible for creating/holding UI elements
+ * and take care of their actions
  * TODO: Write more actionListeners and wire the rest of the buttons
  **/
-
-public class CarView extends JFrame{
+class CarView extends JFrame {
     private static final int X = 800;
     private static final int Y = 800;
 
@@ -40,7 +42,7 @@ public class CarView extends JFrame{
     private JButton stopButton = new JButton("Stop all cars");
 
     // Constructor
-    public CarView(String frameName, CarController cc){
+    CarView(String frameName, CarController cc) {
         this.carC = cc;
         initComponents(frameName);
     }

@@ -1,13 +1,16 @@
 package UI;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
-// This panel represent the animated part of the view with the car images.
+/* This panel represent the animated part of the view with the car images.
 
+ * This class should only be responsible for drawing out the necessary stuff
+ * to the panel
+ */
 public class DrawPanel extends JPanel{
 
     // Just a single image, TODO: Generalize
@@ -16,7 +19,7 @@ public class DrawPanel extends JPanel{
     private Point volvoPoint = new Point();
 
     // Initializes the panel and reads the images
-    public DrawPanel(int x, int y) {
+    DrawPanel(int x, int y) {
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);

@@ -1,17 +1,19 @@
 package UI;
+
+import Cars.Car;
+
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import Cars.*;
 
 /*
 * This class represents the Controller part in the MVC pattern.
 * It's responsibilities is to listen to the View and responds in a appropriate manner by
 * modifying the model state and the updating the view.
+ *
+ * This class should only be responsible for controlling the cars
  */
 
-public class CarController {
+class CarController {
     // member fields:
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
@@ -26,23 +28,23 @@ public class CarController {
     private ArrayList<Car> cars;
     private int gasAmount;
 
-    public CarController(String name){
+    CarController(String name) {
         cars = new ArrayList<>();
         timer = new Timer(delay, new TimerListener(cars,new CarView(name, this)));
         gasAmount = 0;
 
     }
 
-    public void setGasAmount(int gasAmount) {
+    void setGasAmount(int gasAmount) {
         this.gasAmount = gasAmount;
     }
 
-    public void addCar(Car car){
+    void addCar(Car car) {
         cars.add(car);
     }
 
 
-    public void start(){
+    void start() {
         timer.start();
     }
 

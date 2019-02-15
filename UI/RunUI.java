@@ -2,6 +2,9 @@ package UI;
 
 import Cars.Volvo240;
 
+/*
+ * This class should only be responsible for starting up the UI
+ */
 public class RunUI {
 
     public static void main(String[] args) {

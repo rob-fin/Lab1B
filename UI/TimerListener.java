@@ -6,11 +6,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * This class should only be responsible for handling the actionPerformed
+ * This class could be moved into CarController but it might be easier to implement
+ * new features with the class being alone
+ */
 public class TimerListener implements ActionListener{
     private CarView frame;
     private ArrayList<Car> cars;
 
-    public TimerListener(ArrayList<Car> cars, CarView frame){
+    TimerListener(ArrayList<Car> cars, CarView frame) {
         this.cars = cars;
         this.frame =  frame;
     }
