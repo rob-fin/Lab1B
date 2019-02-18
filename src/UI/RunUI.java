@@ -14,9 +14,7 @@ public class RunUI {
     private static final int delay = 50;
 
     public static void main(String[] args) {
-        CarView frame = new CarView("test");
-        CarController cc = new CarController(frame);
-
+        CarController cc = new CarController("test");
         cc.addCar(new Volvo240());
 
         Timer timer = new Timer(delay, cc);

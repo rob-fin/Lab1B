@@ -42,8 +42,8 @@ class CarView extends JFrame {
     private JButton stopButton = new JButton("Stop all cars");
 
     // Constructor
-    CarView(String frameName) {
-        this.carC = new CarController(this);
+    CarView(CarController carC, String frameName) {
+        this.carC = carC;
         initComponents(frameName);
     }
 
@@ -125,4 +125,5 @@ class CarView extends JFrame {
         // Make sure the frame exits when "x" is pressed
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
 }

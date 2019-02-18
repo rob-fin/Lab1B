@@ -25,11 +25,11 @@ class CarController implements ActionListener {
     private CarView frame;
 
 
-    CarController(CarView frame) {
+    CarController(String name) {
         cars = new ArrayList<>();
         gasAmount = 0;
         brakeAmount = 0;
-        this.frame = frame;
+        this.frame = new CarView(this,name);
 
     }
 
