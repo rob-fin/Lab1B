@@ -51,7 +51,7 @@ class CarView extends JFrame {
     }
 
     public int getDrawHeigth() {
-        return Y - controlPanel.getPreferredSize().height;
+        return drawPanel.getHeight();
     }
 
     // Sets everything in place and fits everything

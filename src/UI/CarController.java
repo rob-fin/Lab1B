@@ -83,13 +83,20 @@ class CarController implements ActionListener {
         for (Car car : cars) {
             car.move();
 
-            if (car.getCurrentPosition().y > drawHeigth)
-                car.invertDirection();
+            checkMove(car);
+
             int x = car.getCurrentPosition().x;
             int y = car.getCurrentPosition().y;
             frame.drawPanel.moveit(x, y);
             // repaint() calls the paintComponent method of the panel
             frame.drawPanel.repaint();
         }
+    }
+
+    private void checkMove(Car car) {
+        if (car.getCurrentPosition().y > drawHeigth - 60 ||
+            car.getCurrentPosition().y < 0)
+            car.setCurrentSpeed(-car.getCurrentSpeed());
+
     }
 }
