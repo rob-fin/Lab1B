@@ -19,15 +19,20 @@ class CarController {
     // A list of cars, modify if needed
     private ArrayList<Car> cars;
     private int gasAmount;
+    private int brakeAmount;
 
     CarController() {
         cars = new ArrayList<>();
         gasAmount = 0;
+        brakeAmount = 0;
 
     }
 
     void setGasAmount(int gasAmount) {
         this.gasAmount = gasAmount;
+    }
+    void setBrakeAmount(int brakeAmount) {
+        this.brakeAmount = brakeAmount;
     }
 
     void addCar(Car car) {
@@ -44,6 +49,13 @@ class CarController {
         double gas = ((double) gasAmount) / 100;
         for (Car car : cars) {
             car.gas(gas);
+        }
+    }
+
+    void brake() {
+        double brake = ((double) brakeAmount) / 100;
+        for (Car car : cars) {
+            car.brake(brake);
         }
     }
 }
