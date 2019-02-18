@@ -46,6 +46,13 @@ class CarView extends JFrame {
         this.carC = carC;
         initComponents(frameName);
     }
+    public int getDrawWidth() {
+        return X;
+    }
+
+    public int getDrawHeigth() {
+        return Y - controlPanel.getPreferredSize().height;
+    }
 
     // Sets everything in place and fits everything
     // TODO: Take a good look and make sure you understand how these methods and components work

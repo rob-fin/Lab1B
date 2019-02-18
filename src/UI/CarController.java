@@ -27,6 +27,8 @@ class CarController implements ActionListener {
     private int brakeAmount;
     private CarView frame;
     private Timer timer;
+    private int drawWidth;
+    private int drawHeigth;
 
 
     CarController(String name) {
@@ -34,6 +36,8 @@ class CarController implements ActionListener {
         gasAmount = 0;
         brakeAmount = 0;
         this.frame = new CarView(this,name);
+        drawWidth = frame.getDrawWidth();
+        drawHeigth = frame.getDrawHeigth();
         timer = new Timer(delay, this);
 
     }
