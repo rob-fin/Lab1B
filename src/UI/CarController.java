@@ -5,13 +5,12 @@ import Cars.Car;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Time;
 import java.util.ArrayList;
 
 /*
-* This class represents the Controller part in the MVC pattern.
-* It's responsibilities is to listen to the View and responds in a appropriate manner by
-* modifying the model state and the updating the view.
+ * This class represents the Controller part in the MVC pattern.
+ * It's responsibilities is to listen to the View and responds in a appropriate manner by
+ * modifying the model state and the updating the view.
  *
  * This class should only be responsible for controlling the cars
  */
@@ -35,7 +34,7 @@ class CarController implements ActionListener {
         cars = new ArrayList<>();
         gasAmount = 0;
         brakeAmount = 0;
-        this.frame = new CarView(this,name);
+        this.frame = new CarView(this, name);
         drawWidth = frame.getDrawWidth();
         drawHeigth = frame.getDrawHeigth();
         timer = new Timer(delay, this);
@@ -45,6 +44,7 @@ class CarController implements ActionListener {
     void setGasAmount(int gasAmount) {
         this.gasAmount = gasAmount;
     }
+
     void setBrakeAmount(int brakeAmount) {
         this.brakeAmount = brakeAmount;
     }
@@ -79,6 +79,7 @@ class CarController implements ActionListener {
             car.brake(brake);
         }
     }
+
     public void actionPerformed(ActionEvent e) {
         for (Car car : cars) {
             car.move();
@@ -94,9 +95,8 @@ class CarController implements ActionListener {
     }
 
     private void checkMove(Car car) {
-        if (car.getCurrentPosition().y > drawHeigth - 60 ||
-            car.getCurrentPosition().y < 0)
-            car.setCurrentSpeed(-car.getCurrentSpeed());
-
+        if (car.getCurrentPosition().y > drawHeigth - 60 || car.getCurrentPosition().y < 0) {
+            car.invertDirection();
+        }
     }
 }
