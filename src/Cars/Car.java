@@ -156,6 +156,26 @@ public abstract class Car implements Moveable {
     }
 
     /**
+     * Inverts the direction of the Car
+     */
+    public void invertDirection() {
+        switch (direction) {
+            case EAST:
+                direction = Direction.WEST;
+                break;
+            case NORTH:
+                direction = Direction.SOUTH;
+                break;
+            case WEST:
+                direction = Direction.EAST;
+                break;
+            case SOUTH:
+                direction = Direction.NORTH;
+                break;
+        }
+    }
+
+    /**
      * Returns the current position of the SuperStuff.Car.
      *
      * @return A reference to a new Point2D.Double representing the current position of the SuperStuff.Car.
