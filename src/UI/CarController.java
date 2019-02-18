@@ -2,6 +2,8 @@ package UI;
 
 import Cars.Car;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /*
@@ -12,7 +14,7 @@ import java.util.ArrayList;
  * This class should only be responsible for controlling the cars
  */
 
-class CarController {
+class CarController implements ActionListener {
     // member fields:
 
 
@@ -20,11 +22,14 @@ class CarController {
     private ArrayList<Car> cars;
     private int gasAmount;
     private int brakeAmount;
+    private CarView frame;
 
-    CarController() {
+
+    CarController(CarView frame) {
         cars = new ArrayList<>();
         gasAmount = 0;
         brakeAmount = 0;
+        this.frame = frame;
 
     }
 
@@ -56,6 +61,20 @@ class CarController {
         double brake = ((double) brakeAmount) / 100;
         for (Car car : cars) {
             car.brake(brake);
+        }
+    }
+    public void actionPerformed(ActionEvent e) {
+        for (Car car : cars) {
+            car.move();
+
+            if (car.getCurrentPosition().y > 20)
+                car.setCurrentSpeed(-car.getCurrentSpeed());
+
+            int x = car.getCurrentPosition().x;
+            int y = car.getCurrentPosition().y;
+            frame.drawPanel.moveit(x, y);
+            // repaint() calls the paintComponent method of the panel
+            frame.drawPanel.repaint();
         }
     }
 }

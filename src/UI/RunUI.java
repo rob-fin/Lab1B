@@ -2,6 +2,7 @@ package UI;
 
 import Cars.Volvo240;
 
+
 import javax.swing.*;
 
 /*
@@ -13,14 +14,12 @@ public class RunUI {
     private static final int delay = 50;
 
     public static void main(String[] args) {
-        CarController cc = new CarController();
+        CarView frame = new CarView("test");
+        CarController cc = new CarController(frame);
+
         cc.addCar(new Volvo240());
 
-        CarView frame = new CarView("test", cc);
-        TimerListener tl = new TimerListener(cc.getCars(), frame);
-
-        Timer timer = new Timer(delay, tl);
+        Timer timer = new Timer(delay, cc);
         timer.start();
-
     }
 }
