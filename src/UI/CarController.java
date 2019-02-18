@@ -2,8 +2,10 @@ package UI;
 
 import Cars.Car;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Time;
 import java.util.ArrayList;
 
 /*
@@ -16,13 +18,15 @@ import java.util.ArrayList;
 
 class CarController implements ActionListener {
     // member fields:
-
+// The delay (ms) corresponds to 20 updates a sec (hz)
+    private static final int delay = 50;
 
     // A list of cars, modify if needed
     private ArrayList<Car> cars;
     private int gasAmount;
     private int brakeAmount;
     private CarView frame;
+    Timer timer;
 
 
     CarController(String name) {
@@ -30,6 +34,7 @@ class CarController implements ActionListener {
         gasAmount = 0;
         brakeAmount = 0;
         this.frame = new CarView(this,name);
+        timer = new Timer(delay, this);
 
     }
 
