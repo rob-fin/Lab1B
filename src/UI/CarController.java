@@ -26,7 +26,7 @@ class CarController implements ActionListener {
     private int gasAmount;
     private int brakeAmount;
     private CarView frame;
-    Timer timer;
+    private Timer timer;
 
 
     CarController(String name) {
@@ -53,6 +53,13 @@ class CarController implements ActionListener {
         return cars;
     }
 
+    public void start() {
+        timer.start();
+    }
+
+    public void stop() {
+        timer.stop();
+    }
 
     // Calls the gas method for each car once
     void gas() {
