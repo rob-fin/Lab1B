@@ -19,10 +19,10 @@ public class RunUI {
         CarController cc = new CarController("test");
         cc.addCar(new Volvo240());
         Saab95 saab = new Saab95();
-        saab.setPosition(new Point(0, 100));
+        saab.setPosition(new Point(100, 0));
         cc.addCar(saab);
         Scania scania = new Scania();
-        scania.setPosition(new Point(0, 200));
+        scania.setPosition(new Point(200, 0));
         cc.addCar(scania);
     }
 }
