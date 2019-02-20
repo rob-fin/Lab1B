@@ -1,8 +1,9 @@
 package Cars;
 
-import CarSupplements.*;
+import CarSupplements.Moveable;
+import CarSupplements.ServiceStation;
+
 import java.awt.*;
-import java.awt.geom.Point2D;
 
 /**
  * Models a general Car that more specific Cars can extend.
@@ -85,7 +86,7 @@ public abstract class Car implements Moveable {
      * Starts the engine
      */
     public void startEngine() {
-        currentSpeed = 1;
+        currentSpeed = 0.1;
     }
 
     /**
