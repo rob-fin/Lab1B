@@ -1,6 +1,7 @@
 package UI;
 
 import Cars.Saab95;
+import Cars.Scania;
 import Cars.Volvo240;
 
 
@@ -19,8 +20,9 @@ public class RunUI {
         cc.addCar(new Volvo240());
         Saab95 saab = new Saab95();
         saab.setPosition(new Point(0, 100));
-
         cc.addCar(saab);
-
+        Scania scania = new Scania();
+        scania.setPosition(new Point(0, 200));
+        cc.addCar(scania);
     }
 }

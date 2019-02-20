@@ -14,8 +14,8 @@ public class Scania extends Car {
      */
     public Scania() {
         super(4, 700, 0, Color.white, "Scania");
-        startEngine();
         wagon = new TruckBed();
+        stopEngine();
     }
 
     /**

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import Cars.Car;
 import Cars.Saab95;
 import Cars.Volvo240;
+import Cars.Scania;
 
 import java.util.HashMap;
 
@@ -51,7 +52,10 @@ public class DrawPanel extends JPanel{
                 carImages.put(car, ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Volvo240.jpg")));
             } else if (car instanceof Saab95) {
                 carImages.put(car, ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Saab95.jpg")));
+            } else if (car instanceof Scania) {
+                carImages.put(car, ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Scania.jpg")));
             }
+
         } catch (IOException ex) {
             ex.printStackTrace();
         }
