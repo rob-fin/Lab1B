@@ -97,14 +97,14 @@ class CarController implements ActionListener {
     void liftBed(){
         for (Car car : cars) {
             if (car instanceof Scania) {
-                ((Scania) car).getWagon().tiltWagon(90);
+                ((Scania) car).getWagon().tiltWagon(65);
             }
         }
     }
     void lowerBed(){
         for (Car car : cars) {
             if (car instanceof Scania) {
-                ((Scania) car).getWagon().tiltWagon(-90);
+                ((Scania) car).getWagon().tiltWagon(-65);
             }
         }
     }

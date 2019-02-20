@@ -45,4 +45,14 @@ public class Scania extends Car {
         wagon.setTruckSpeed(speed);
     }
 
+    /**
+     * Overrided because we need to check the wagon angle to see if it's all the way down
+     * @param amount Specifies how much the speed should increase by [0,1]
+     */
+    @Override
+    public void gas(double amount) {
+        if (this.wagon.getWagonAngle() == 0)
+       super.gas(amount);
+    }
+
 }

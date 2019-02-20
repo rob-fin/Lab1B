@@ -46,6 +46,7 @@ public class TruckBed {
         this.truckSpeed = truckSpeed;
     }
 
+
     /**
      * @return wagon angle
      */
