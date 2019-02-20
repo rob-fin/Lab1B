@@ -2,6 +2,7 @@ package UI;
 
 import Cars.Car;
 import Cars.Saab95;
+import Cars.Scania;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -90,6 +91,20 @@ class CarController implements ActionListener {
         for (Car car : cars) {
             if (car instanceof Saab95) {
                 ((Saab95) car).setTurboOn();
+            }
+        }
+    }
+    void liftBed(){
+        for (Car car : cars) {
+            if (car instanceof Scania) {
+                ((Scania) car).getWagon().tiltWagon(90);
+            }
+        }
+    }
+    void lowerBed(){
+        for (Car car : cars) {
+            if (car instanceof Scania) {
+                ((Scania) car).getWagon().tiltWagon(-90);
             }
         }
     }
