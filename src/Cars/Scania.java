@@ -31,7 +31,7 @@ public class Scania extends Car {
      * @return returns the speed factor.
      */
     public double speedFactor() {
-        return getEnginePower();
+        return 1;
     }
 
     /**
