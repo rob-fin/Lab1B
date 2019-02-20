@@ -1,6 +1,7 @@
 package UI;
 
 import Cars.Car;
+import Cars.Saab95;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -81,6 +82,14 @@ class CarController implements ActionListener {
         double brake = ((double) brakeAmount) / 100;
         for (Car car : cars) {
             car.brake(brake);
+        }
+    }
+
+    void turboOn() {
+        for (Car car : cars) {
+            if (car instanceof Saab95) {
+                ((Saab95) car).setTurboOn();
+            }
         }
     }
 
