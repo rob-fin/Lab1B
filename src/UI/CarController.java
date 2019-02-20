@@ -29,7 +29,7 @@ class CarController implements ActionListener {
     private CarView frame;
     private Timer timer;
     private int drawWidth;
-    private int drawHeigth;
+    private int drawHeight;
 
 
     CarController(String name) {
@@ -38,7 +38,7 @@ class CarController implements ActionListener {
         brakeAmount = 0;
         this.frame = new CarView(this, name);
         drawWidth = frame.getDrawWidth();
-        drawHeigth = frame.getDrawHeigth();
+        drawHeight = frame.getDrawHeigth();
         timer = new Timer(delay, this);
         timer.start();
 
@@ -61,13 +61,13 @@ class CarController implements ActionListener {
         return cars;
     }
 
-    public void start() {
+    void start() {
         //timer.start();
         for (Car car : cars)
             car.startEngine();
     }
 
-    public void stop() {
+    void stop() {
         for (Car car : cars)
             car.stopEngine();
     }
@@ -115,7 +115,7 @@ class CarController implements ActionListener {
 
             checkMove(car);
 
-            //frame.drawPanel.moveit(x, y, car);
+            //frame.drawPanel.moveIt(x, y, car);
             // repaint() calls the paintComponent method of the panel
 
         }
@@ -123,7 +123,7 @@ class CarController implements ActionListener {
     }
 
     private void checkMove(Car car) {
-        if (car.getCurrentPosition().y > drawHeigth - 60 || car.getCurrentPosition().y < 0) {
+        if (car.getCurrentPosition().y > drawHeight - 60 || car.getCurrentPosition().y < 0) {
             car.invertDirection();
         }
     }
