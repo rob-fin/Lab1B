@@ -1,5 +1,8 @@
-import CarSupplements.*;
-import Cars.*;
+import CarSupplements.CarTrailer;
+import Cars.Car;
+import Cars.CarTransport;
+import Cars.Scania;
+import Cars.Volvo240;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -97,6 +100,6 @@ public class TruckTest {
 
     @Test
     public void testScaniaSpeedFactor() {
-        assertTrue(scania.speedFactor() == scania.getEnginePower());
+        assertTrue(scania.speedFactor() == scania.getEnginePower() * 0.003);
     }
 }
