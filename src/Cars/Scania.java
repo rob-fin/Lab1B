@@ -1,6 +1,7 @@
 package Cars;
 
-import CarSupplements.*;
+import CarSupplements.TruckBed;
+
 import java.awt.*;
 
 /**
@@ -13,7 +14,7 @@ public class Scania extends Car {
      * Instantiates a Scania.
      */
     public Scania() {
-        super(4, 700, 0, Color.white, "Scania");
+        super(4, 350, 0, Color.white, "Scania");
         wagon = new TruckBed();
         stopEngine();
     }
@@ -31,7 +32,7 @@ public class Scania extends Car {
      * @return returns the speed factor.
      */
     public double speedFactor() {
-        return getEnginePower();
+        return getEnginePower() * 0.003;
     }
 
     /**

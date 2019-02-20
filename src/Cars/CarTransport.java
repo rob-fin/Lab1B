@@ -1,6 +1,7 @@
 package Cars;
 
-import CarSupplements.*;
+import CarSupplements.CarTrailer;
+
 import java.awt.*;
 
 /**
@@ -13,7 +14,7 @@ public class CarTransport extends Car {
      * Instantiates a CarTransport
      */
     public CarTransport() {
-        super(2, 800, 0, Color.RED, "CarTransport");
+        super(2, 400, 0, Color.RED, "CarTransport");
         carTrailer = new CarTrailer();
     }
 

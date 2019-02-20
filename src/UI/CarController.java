@@ -60,13 +60,13 @@ class CarController implements ActionListener {
     }
 
     public void start() {
-        //timer.start();
         for (Car car : cars)
             car.startEngine();
     }
 
     public void stop() {
-        timer.stop();
+        for (Car car : cars)
+            car.stopEngine();
     }
 
     // Calls the gas method for each car once
