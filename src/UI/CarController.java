@@ -38,6 +38,7 @@ class CarController implements ActionListener {
         drawWidth = frame.getDrawWidth();
         drawHeigth = frame.getDrawHeigth();
         timer = new Timer(delay, this);
+        timer.start();
 
     }
 
@@ -51,6 +52,7 @@ class CarController implements ActionListener {
 
     void addCar(Car car) {
         cars.add(car);
+        frame.drawPanel.addCar(car);
     }
 
     public ArrayList<Car> getCars() {
@@ -58,7 +60,9 @@ class CarController implements ActionListener {
     }
 
     public void start() {
-        timer.start();
+        //timer.start();
+        for (Car car : cars)
+            car.startEngine();
     }
 
     public void stop() {
@@ -86,12 +90,11 @@ class CarController implements ActionListener {
 
             checkMove(car);
 
-            int x = car.getCurrentPosition().x;
-            int y = car.getCurrentPosition().y;
-            frame.drawPanel.moveit(x, y);
+            //frame.drawPanel.moveit(x, y, car);
             // repaint() calls the paintComponent method of the panel
-            frame.drawPanel.repaint();
+
         }
+        frame.drawPanel.repaint();
     }
 
     private void checkMove(Car car) {
