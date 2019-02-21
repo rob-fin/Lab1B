@@ -94,6 +94,13 @@ class CarController implements ActionListener {
             }
         }
     }
+    void turboOff() {
+        for (Car car : cars) {
+            if (car instanceof Saab95) {
+                ((Saab95) car).setTurboOff();
+            }
+        }
+    }
     void liftBed(){
         for (Car car : cars) {
             if (car instanceof Scania) {
@@ -110,11 +117,17 @@ class CarController implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+
+        /*for (Car car : cars) { // debugging
+            System.out.println("pos: " + car.getCurrentPosition() + ", speed: " + car.getCurrentSpeed() + ", direction: " + car.getDirection());
+            //System.out.println(car.getCurrentSpeed());
+        }*/
+
+
         for (Car car : cars) {
             car.move();
 
             checkMove(car);
-
             //frame.drawPanel.moveIt(x, y, car);
             // repaint() calls the paintComponent method of the panel
 

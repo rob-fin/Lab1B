@@ -37,7 +37,7 @@ public abstract class Car implements Moveable {
         this.color = color;
         this.modelName = modelName;
         this.position = new Point();
-        this.direction = Direction.NORTH;
+        this.direction = Direction.SOUTH;
     }
 
     /**
@@ -86,7 +86,7 @@ public abstract class Car implements Moveable {
      * Starts the engine
      */
     public void startEngine() {
-        currentSpeed = 0.1;
+        currentSpeed = 1;
     }
 
     /**
@@ -105,13 +105,13 @@ public abstract class Car implements Moveable {
                 position.x += currentSpeed;
                 break;
             case NORTH:
-                position.y += currentSpeed;
+                position.y -= currentSpeed;
                 break;
             case WEST:
                 position.x -= currentSpeed;
                 break;
             case SOUTH:
-                position.y -= currentSpeed;
+                position.y += currentSpeed;
                 break;
         }
     }

@@ -18,7 +18,13 @@ public class Scania extends Car {
         wagon = new TruckBed();
         stopEngine();
     }
-
+    @Override
+    public void startEngine() {
+        if (wagon.getWagonAngle() == 0)
+            super.startEngine();
+        else
+            System.out.println("Cannot start engine when truckbed is up");
+    }
     /**
      *
      * @return Returns the trucks current wagon
