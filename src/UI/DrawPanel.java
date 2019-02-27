@@ -19,7 +19,7 @@ import Cars.Scania;
  * to the panel
  */
 public class DrawPanel extends JPanel implements ICarPainter {
-
+    private ArrayList<Car> cars;
     // Initializes the panel and reads the images
     DrawPanel(int x, int y) {
         this.setDoubleBuffered(true);
@@ -41,14 +41,34 @@ public class DrawPanel extends JPanel implements ICarPainter {
         return null;
     }
 
-    public void paintCars(ArrayList<Car> cars) {
-        this.repaint();
+    public void paintCars(Graphics g) {
+        if (g == null){
+            System.out.println("g is null");
+        }
+        if (cars == null){
+            System.out.println("cars is null in second paintCars");
+        }
+
         for (Car car : cars)
-            this.getGraphics().drawImage(getImage(car), car.getCurrentPosition().x, car.getCurrentPosition().y, null); // see javadoc for more info on the parameters
+            g.drawImage(getImage(car), car.getCurrentPosition().x, car.getCurrentPosition().y, null);
+    }
+
+    public void paintCars(ArrayList<Car> cars){
+        if (cars == null){
+            System.out.println("Cars is null in the first paintCars");
+        }
+        this.cars = cars;
+        this.repaint();
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-    }
-}
+        if (cars == null){
+            System.out.println("cars is null in paintComponent");
+        }
+        paintCars(g);
+
+
+    }}
+

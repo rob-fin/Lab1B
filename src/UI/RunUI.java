@@ -17,8 +17,6 @@ public class RunUI {
 
     public static void main(String[] args) {
         CarController cc = new CarController("test");
-        ICarPainter painter = new DrawPanel(800, 560);
-        Timer timer = new Timer(cc, painter);
         cc.addCar(new Volvo240());
         Saab95 saab = new Saab95();
         saab.setPosition(new Point(100, 0));
@@ -26,5 +24,9 @@ public class RunUI {
         Scania scania = new Scania();
         scania.setPosition(new Point(200, 0));
         cc.addCar(scania);
+
+        ICarPainter painter = new DrawPanel(800, 560);
+        Timer timer = new Timer(cc, painter);
+
     }
 }

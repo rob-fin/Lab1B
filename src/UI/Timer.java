@@ -50,7 +50,8 @@ public class Timer implements ActionListener {
         carC.moveAllCars();
         ArrayList<Car> cars = carC.getCars();
         // Notify all observers that something has happened and we need to repaint all the cars
-        for (ICarPainter observer : observers)
+        for (ICarPainter observer : observers){
             observer.paintCars(cars);
+        }
     }
 }
