@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Timer implements ActionListener {
     private static final int delay = 50;
-    private javax.swing.Timer timer;
+    private final javax.swing.Timer timer;
     private CarController carC;
     private List<ICarPainter> observers;
 
