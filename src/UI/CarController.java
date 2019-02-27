@@ -50,7 +50,7 @@ class CarController {
 
     void addCar(Car car) {
         cars.add(car);
-        frame.drawPanel.addCar(car);
+        //frame.drawPanel.addCar(car);
     }
 
     public ArrayList<Car> getCars() {

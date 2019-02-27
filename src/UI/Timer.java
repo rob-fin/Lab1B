@@ -25,7 +25,6 @@ public class Timer implements ActionListener {
     Timer(CarController carC, ICarPainter obeserver){
         this(carC);
         observers.add(obeserver);
-
     }
 
     /**
