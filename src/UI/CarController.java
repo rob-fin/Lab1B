@@ -17,17 +17,15 @@ import java.util.ArrayList;
  * This class should only be responsible for controlling the cars
  */
 
-class CarController implements ActionListener {
+class CarController {
     // member fields:
 // The delay (ms) corresponds to 20 updates a sec (hz)
-    private static final int delay = 50;
 
     // A list of cars, modify if needed
     private ArrayList<Car> cars;
     private int gasAmount;
     private int brakeAmount;
     private CarView frame;
-    private Timer timer;
     private int drawWidth;
     private int drawHeight;
 
@@ -39,8 +37,6 @@ class CarController implements ActionListener {
         this.frame = new CarView(this, name);
         drawWidth = frame.getDrawWidth();
         drawHeight = frame.getDrawHeigth();
-        timer = new Timer(delay, this);
-        timer.start();
 
     }
 
@@ -115,24 +111,11 @@ class CarController implements ActionListener {
             }
         }
     }
-
-    public void actionPerformed(ActionEvent e) {
-
-        /*for (Car car : cars) { // debugging
-            System.out.println("pos: " + car.getCurrentPosition() + ", speed: " + car.getCurrentSpeed() + ", direction: " + car.getDirection());
-            //System.out.println(car.getCurrentSpeed());
-        }*/
-
-
-        for (Car car : cars) {
+    void moveAllCars(){
+        for (Car car : cars){
             car.move();
-
             checkMove(car);
-            //frame.drawPanel.moveIt(x, y, car);
-            // repaint() calls the paintComponent method of the panel
-
         }
-        frame.drawPanel.repaint();
     }
 
     private void checkMove(Car car) {
