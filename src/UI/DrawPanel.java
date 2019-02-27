@@ -1,17 +1,15 @@
 package UI;
 
+import Cars.Car;
+import Cars.Saab95;
+import Cars.Scania;
+import Cars.Volvo240;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import Cars.Car;
-import Cars.Saab95;
-import Cars.Volvo240;
-import Cars.Scania;
-
 
 /* This panel represent the animated part of the view with the car images.
 
@@ -41,22 +39,12 @@ public class DrawPanel extends JPanel implements ICarPainter {
         return null;
     }
 
-    public void paintCars(Graphics g) {
-        if (g == null){
-            System.out.println("g is null");
-        }
-        if (cars == null){
-            System.out.println("cars is null in second paintCars");
-        }
-
+    private void paintCars(Graphics g) {
         for (Car car : cars)
             g.drawImage(getImage(car), car.getCurrentPosition().x, car.getCurrentPosition().y, null);
     }
 
     public void paintCars(ArrayList<Car> cars){
-        if (cars == null){
-            System.out.println("Cars is null in the first paintCars");
-        }
         this.cars = cars;
         this.repaint();
     }
@@ -64,11 +52,7 @@ public class DrawPanel extends JPanel implements ICarPainter {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (cars == null){
-            System.out.println("cars is null in paintComponent");
-        }
-        paintCars(g);
-
-
+        if (cars != null)
+            paintCars(g);
     }}
 
