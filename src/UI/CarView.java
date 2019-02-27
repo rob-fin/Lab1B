@@ -2,6 +2,8 @@ package UI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
 
 class CarView extends JFrame {
@@ -25,13 +27,15 @@ class CarView extends JFrame {
     private JButton turboOffButton = new JButton("Saab Turbo off");
     private JButton liftBedButton = new JButton("Scania Lift Bed");
     private JButton lowerBedButton = new JButton("Lower Lift Bed");
-
     private JButton startButton = new JButton("Start all cars");
     private JButton stopButton = new JButton("Stop all cars");
-
+    private ArrayList<JButton> buttons = new ArrayList<>();
     CarView(String frameName, Controller controller, JPanel drawPanel) {
         this.drawPanel = drawPanel;
         this.controller = controller;
+        Collections.addAll(buttons, gasButton, brakeButton, turboOnButton, turboOffButton,
+                liftBedButton, lowerBedButton, startButton, stopButton);
+
         initComponents(frameName);
         setActionListeners();
     }
@@ -57,7 +61,6 @@ class CarView extends JFrame {
                         100, //max
                         1);//step
         gasSpinner = new JSpinner(spinnerModel);
-        gasSpinner.addChangeListener(controller);
 
         gasPanel.setLayout(new BorderLayout());
         gasPanel.add(gasLabel, BorderLayout.PAGE_START);
@@ -101,22 +104,13 @@ class CarView extends JFrame {
     }
 
     private void setActionListeners() {
-        gasButton.removeAll();
-        brakeButton.removeAll();
-        startButton.removeAll();
-        stopButton.removeAll();
-        turboOnButton.removeAll();
-        turboOffButton.removeAll();
-        liftBedButton.removeAll();
-        lowerBedButton.removeAll();
+        for (JButton button : buttons) {
+            button.removeAll();
+            button.addActionListener(controller);
+        }
+        if (gasSpinner.getChangeListeners().length > 1)
+            gasSpinner.removeChangeListener(gasSpinner.getChangeListeners()[0]);
 
-        gasButton.addActionListener(controller);
-        brakeButton.addActionListener(controller);
-        startButton.addActionListener(controller);
-        stopButton.addActionListener(controller);
-        turboOnButton.addActionListener(controller);
-        turboOffButton.addActionListener(controller);
-        liftBedButton.addActionListener(controller);
-        lowerBedButton.addActionListener(controller);
+        gasSpinner.addChangeListener(controller);
     }
 }
