@@ -95,11 +95,11 @@ public class TruckTest {
     public void moveWithRamp(){
         carTransport.getCarTrailer().setRamp(CarTrailer.Mode.UP);
         carTransport.gas(0.3);
-        assertTrue(carTransport.getCurrentSpeed() == 0);
+        assertEquals(0, carTransport.getCurrentSpeed(), 0.0);
     }
 
     @Test
     public void testScaniaSpeedFactor() {
-        assertTrue(scania.speedFactor() == scania.getEnginePower() * 0.003);
+        assertEquals(scania.speedFactor(), scania.getEnginePower() * 0.003, 0.0);
     }
 }

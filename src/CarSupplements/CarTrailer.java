@@ -20,7 +20,7 @@ public class CarTrailer {
     private static final int MAX_CAR = 10;
     private Stack<SmallCar> cars;
     private Mode ramp;
-    private double currentSpeed = 0;
+    private double currentSpeed;
 
     /**
      * Instantiates a new CarTrailer

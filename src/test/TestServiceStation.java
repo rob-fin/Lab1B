@@ -34,7 +34,7 @@ public class TestServiceStation {
     @Test
     public void testExceptionWhenFull() {
         ServiceStation<Car> ss = new ServiceStation<>();
-        Car cars[] = new Car[10];
+        Car[] cars = new Car[10];
         for (int i = 0; i < 10; i++) {
             cars[i] = new Volvo240();
             cars[i].enter(ss);
@@ -65,7 +65,7 @@ public class TestServiceStation {
         Volvo240 v = new Volvo240();
         v.enter(ss);
         Volvo240 v2 = ss.unload();
-        assertTrue(v2 != null);
+        assertNotNull(v2);
     }
 
 

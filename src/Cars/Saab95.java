@@ -1,6 +1,5 @@
 package Cars;
 
-import CarSupplements.*;
 import java.awt.*;
 
 /**
@@ -36,7 +35,7 @@ public class Saab95 extends SmallCar implements ITurbo {
 
     /**
      *
-     * @return Returns the speedfactor
+     * @return Returns the speedFactor
      */
     public double speedFactor() {
         double turbo = 1;
