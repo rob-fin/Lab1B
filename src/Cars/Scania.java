@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * Models a Scania truck.
  */
-public class Scania extends Car {
+public class Scania extends Car implements ITruckBed {
     private TruckBed wagon;
 
     /**

@@ -6,7 +6,7 @@ import java.awt.*;
 /**
  * Models the specific Car Saab95.
  */
-public class Saab95 extends SmallCar {
+public class Saab95 extends SmallCar implements ITurbo {
 
     private boolean turboOn;
 

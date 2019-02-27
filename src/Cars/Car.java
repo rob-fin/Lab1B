@@ -37,7 +37,7 @@ public abstract class Car implements Moveable {
         this.color = color;
         this.modelName = modelName;
         this.position = new Point();
-        this.direction = Direction.SOUTH;
+        this.direction = Direction.NORTH;
     }
 
     /**
