@@ -1,19 +1,22 @@
 package UI;
 
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Controller implements ActionListener {
-    CarController carC;
+public class Controller implements ActionListener, ChangeListener {
+    private CarController carC;
 
-    public void setCarController(CarController carC) {
+    void setCarController(CarController carC) {
         this.carC = carC;
     }
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         String command = actionEvent.getActionCommand();
-        switch(command) {
+        switch (command) {
             case "Gas":
                 carC.gas();
                 break;
@@ -38,11 +41,15 @@ public class Controller implements ActionListener {
             case "Stop all cars":
                 carC.stop();
                 break;
+            default:
+                System.out.println("DEBUG : '" + command + "' was ignored");
+                break;
         }
-
     }
-    public void setGasBrakeAmount(int amount) {
-        carC.setGasAmount(amount);
-        carC.setBrakeAmount(amount);
+
+    public void stateChanged(ChangeEvent e) {
+        int value = (int) ((JSpinner) e.getSource()).getValue();
+        carC.setBrakeAmount(value);
+        carC.setGasAmount(value);
     }
 }
