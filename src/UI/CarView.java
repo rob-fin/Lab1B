@@ -21,7 +21,8 @@ class CarView extends JFrame {
     private static final int Y = 800;
 
     // The controller member
-    private CarController carC;
+    //private CarController carC;
+    Controller controller;
 
     DrawPanel drawPanel = new DrawPanel(X, Y-240);
 
@@ -43,7 +44,8 @@ class CarView extends JFrame {
 
     // Constructor
     CarView(CarController carC, String frameName) {
-        this.carC = carC;
+        controller = new Controller();
+        controller.setCarController(carC);
         initComponents(frameName);
     }
     public int getDrawWidth() {
@@ -73,8 +75,7 @@ class CarView extends JFrame {
         gasSpinner.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
 
-                carC.setGasAmount((int) ((JSpinner)e.getSource()).getValue());
-                carC.setBrakeAmount((int) ((JSpinner)e.getSource()).getValue());
+                controller.setGasBrakeAmount((int) ((JSpinner)e.getSource()).getValue());
             }
         });
 
@@ -111,40 +112,40 @@ class CarView extends JFrame {
         gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.gas();
+                controller.actionPerformed(e);
             }
         });
 
         brakeButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { carC.brake(); }
+            public void actionPerformed(ActionEvent e) { controller.actionPerformed(e); }
         });
 
         startButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { carC.start(); }
+            public void actionPerformed(ActionEvent e) { controller.actionPerformed(e); }
         });
 
         stopButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { carC.stop(); }
+            public void actionPerformed(ActionEvent e) { controller.actionPerformed(e); }
         });
 
         turboOnButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { carC.turboOn(); }
+            public void actionPerformed(ActionEvent e) { controller.actionPerformed(e); }
         });
         turboOffButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { carC.turboOff(); }
+            public void actionPerformed(ActionEvent e) { controller.actionPerformed(e); }
         });
         liftBedButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { carC.liftBed(); }
+            public void actionPerformed(ActionEvent e) { controller.actionPerformed(e); }
         });
         lowerBedButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { carC.lowerBed(); }
+            public void actionPerformed(ActionEvent e) { controller.actionPerformed(e); }
         });
 
         // Make the frame pack all it's components by respecting the sizes if possible.
