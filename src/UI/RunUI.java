@@ -4,8 +4,6 @@ import Cars.Saab95;
 import Cars.Scania;
 import Cars.Volvo240;
 
-
-import javax.swing.*;
 import java.awt.*;
 
 /*
@@ -16,7 +14,8 @@ public class RunUI {
 
 
     public static void main(String[] args) {
-        CarController cc = new CarController("test");
+        //region Create carController and add cars
+        CarController cc = new CarController();
         cc.addCar(new Volvo240());
         Saab95 saab = new Saab95();
         saab.setPosition(new Point(100, 0));
@@ -24,8 +23,15 @@ public class RunUI {
         Scania scania = new Scania();
         scania.setPosition(new Point(200, 0));
         cc.addCar(scania);
+        //endregion
 
-        ICarPainter painter = new DrawPanel(800, 560);
+        Controller ctrl = new Controller();
+
+        DrawPanel painter = new DrawPanel(CarView.X, CarView.Y - 240);
+        ctrl.setCarController(cc);
+
+        CarView cw = new CarView("test", ctrl, painter);
+
         Timer timer = new Timer(cc, painter);
 
     }
