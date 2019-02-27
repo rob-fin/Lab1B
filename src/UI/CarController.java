@@ -4,9 +4,6 @@ import Cars.Car;
 import Cars.Saab95;
 import Cars.Scania;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /*
@@ -18,26 +15,14 @@ import java.util.ArrayList;
  */
 
 class CarController {
-    // member fields:
-// The delay (ms) corresponds to 20 updates a sec (hz)
-
-    // A list of cars, modify if needed
     private ArrayList<Car> cars;
     private int gasAmount;
     private int brakeAmount;
-    private CarView frame;
-    private int drawWidth;
-    private int drawHeight;
 
-
-    CarController(String name) {
+    CarController() {
         cars = new ArrayList<>();
         gasAmount = 0;
         brakeAmount = 0;
-        this.frame = new CarView(this, name);
-        drawWidth = frame.getDrawWidth();
-        drawHeight = frame.getDrawHeigth();
-
     }
 
     void setGasAmount(int gasAmount) {
@@ -50,7 +35,6 @@ class CarController {
 
     void addCar(Car car) {
         cars.add(car);
-        //frame.drawPanel.addCar(car);
     }
 
     public ArrayList<Car> getCars() {
@@ -58,7 +42,6 @@ class CarController {
     }
 
     void start() {
-        //timer.start();
         for (Car car : cars)
             car.startEngine();
     }
@@ -118,8 +101,9 @@ class CarController {
         }
     }
 
+    //TODO 560 is hardcoded and should be changed
     private void checkMove(Car car) {
-        if (car.getCurrentPosition().y > drawHeight - 60 || car.getCurrentPosition().y < 0) {
+        if (car.getCurrentPosition().y > 560 - 60 || car.getCurrentPosition().y < 0) {
             car.invertDirection();
         }
     }
