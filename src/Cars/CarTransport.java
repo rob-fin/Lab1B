@@ -65,8 +65,8 @@ public class CarTransport extends Car {
     }
 
     /**
-     * need to override to inform the cartrailer of the speed
-     * @param speed
+     * need to override to inform the carTrailer of the speed
+     * @param speed the speed
      */
     @Override
     public void setCurrentSpeed(double speed) {
@@ -76,7 +76,7 @@ public class CarTransport extends Car {
 
 
     /**
-     * This method is overrided since we need to check
+     * This method is overrode since we need to check
      * the ramp isn't currently in the down position before moving
      *
      * @param amount Specifies how much the speed should increase by [0,1]

@@ -1,6 +1,6 @@
 package Cars;
 
-import CarSupplements.Moveable;
+import CarSupplements.Movable;
 import CarSupplements.ServiceStation;
 
 import java.awt.*;
@@ -8,7 +8,7 @@ import java.awt.*;
 /**
  * Models a general Car that more specific Cars can extend.
  */
-public abstract class Car implements Moveable {
+public abstract class Car implements Movable {
     private final int nrDoors;
     private double currentSpeed;
     private double enginePower;
@@ -250,7 +250,6 @@ public abstract class Car implements Moveable {
         }
         setLoaded(true);
         return true;
-
     }
 
     /**

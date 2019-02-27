@@ -3,7 +3,7 @@ package CarSupplements;
 /**
  * Models the property of being able to move and turn left and right.
  */
-public interface Moveable {
+public interface Movable {
     void move();
 
     void turnLeft();

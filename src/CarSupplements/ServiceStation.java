@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 /**
  * Models a service station that can service different Cars or some specific car,
- * depending on how the class is instantiatet
+ * depending on how the class is instantiated
  * @param <T> The type of the Car: Either Car or a subclass thereof.
  */
 public class ServiceStation<T extends Car>  {

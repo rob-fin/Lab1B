@@ -2,7 +2,7 @@ package Cars;
 
 public interface ITurbo {
 
-    boolean turboOn = false;
+    //boolean turboOn = false;
 
     void setTurboOn();
 

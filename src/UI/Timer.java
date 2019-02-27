@@ -21,10 +21,11 @@ public class Timer implements ActionListener {
         this.carC = carC;
         timer = new javax.swing.Timer(delay, this);
         observers = new ArrayList<>();
+        timer.start();
     }
-    Timer(CarController carC, ICarPainter obeserver){
+    Timer(CarController carC, ICarPainter observer){
         this(carC);
-        observers.add(obeserver);
+        observers.add(observer);
     }
 
     /**

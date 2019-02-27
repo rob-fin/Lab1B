@@ -1,7 +1,7 @@
 package CarSupplements;
 
 /**
- * Models a truck bed that can be used by Scanias.
+ * Models a truck bed that can be used by Scania.
  */
 public class TruckBed {
     private double wagonAngle;

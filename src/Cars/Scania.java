@@ -23,7 +23,7 @@ public class Scania extends Car implements ITruckBed {
         if (wagon.getWagonAngle() == 0)
             super.startEngine();
         else
-            System.out.println("Cannot start engine when truckbed is up");
+            System.out.println("Cannot start engine when truck bed is up");
     }
     /**
      *
@@ -52,7 +52,7 @@ public class Scania extends Car implements ITruckBed {
     }
 
     /**
-     * Overrided because we need to check the wagon angle to see if it's all the way down
+     * Overrode because we need to check the wagon angle to see if it's all the way down
      * @param amount Specifies how much the speed should increase by [0,1]
      */
     @Override
