@@ -42,8 +42,9 @@ class CarController {
     }
 
     void start() {
-        for (Car car : cars)
-            car.startEngine();
+        if (cars.size() > 0 && cars.get(0).getCurrentSpeed() == 0)
+            for (Car car : cars)
+                car.startEngine();
     }
 
     void stop() {
