@@ -1,4 +1,3 @@
-import CarSupplements.*;
 import Cars.*;
 import CarSupplements.*;
 import org.junit.Test;

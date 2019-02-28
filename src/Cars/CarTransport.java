@@ -56,7 +56,7 @@ public class CarTransport extends Car {
 
     /**
      * Moves the Car in its current direction by the amount of its current speed.
-     * Overrided because we need to update the positions of the cars in the carTrailer
+     * Overrode because we need to update the positions of the cars in the carTrailer
      */
     @Override
     public void move() {

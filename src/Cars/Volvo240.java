@@ -1,6 +1,5 @@
 package Cars;
 
-import CarSupplements.*;
 import java.awt.*;
 
 /**

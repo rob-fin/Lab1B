@@ -32,7 +32,7 @@ public class Timer implements ActionListener {
      * Add an observer to be notified when the cars need repainting
      * @param observer the observer to be added
      */
-    void addObserber(ICarPainter observer){
+    void addObserver(ICarPainter observer){
         observers.add(observer);
     }
 
@@ -40,7 +40,7 @@ public class Timer implements ActionListener {
      * Remove an observer to be notified when the cars need repainting
      * @param observer the observer to be removed
      */
-    void removeObserber(ICarPainter observer){
+    void removeObserver(ICarPainter observer){
         observers.remove(observer);
     }
 

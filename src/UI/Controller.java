@@ -23,10 +23,10 @@ public class Controller implements ActionListener, ChangeListener {
             case "Brake":
                 carC.brake();
                 break;
-            case "Saab Turbo On":
+            case "Saab Turbo on":
                 carC.turboOn();
                 break;
-            case "Saab Turbo Off":
+            case "Saab Turbo off":
                 carC.turboOff();
                 break;
             case "Scania Lift Bed":
