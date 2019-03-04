@@ -1,9 +1,11 @@
 package CarSupplements;
 
+import java.util.Random;
 import Cars.*;
 
 public class CarFactory {
     private static final CarFactory instance = new CarFactory();
+    Random rand = new Random();
 
     private CarFactory() {
     }
@@ -30,6 +32,14 @@ public class CarFactory {
         }
         car.stopEngine();
         return car;
+    }
+
+    public Car createCar() {
+        int randomNumber = rand.nextInt(carType.values().length);
+        carType newCarType = carType.values()[randomNumber];
+        return createCar(newCarType);
+
+
     }
 
     public enum carType {Volvo, Saab, Scania, CarTransport}
