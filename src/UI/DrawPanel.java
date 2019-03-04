@@ -34,7 +34,6 @@ public class DrawPanel extends JPanel implements ICarPainter {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
         return null;
     }
 

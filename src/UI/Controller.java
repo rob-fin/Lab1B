@@ -43,6 +43,7 @@ public class Controller implements ActionListener, ChangeListener {
                 break;
             case "Remove car":
                 carC.removeCar();
+                CarFactory.getInstance().carRemoved();
                 break;
             case "Start all cars":
                 carC.start();

@@ -45,7 +45,10 @@ public class CarFactory {
         carType newCarType = carType.values()[randomNumber];
         return createCar(newCarType);
 
+    }
 
+    public void carRemoved() {
+        currentX -= 100;
     }
 
     public enum carType {Volvo, Saab, Scania, CarTransport}
