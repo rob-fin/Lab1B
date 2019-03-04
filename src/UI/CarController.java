@@ -1,5 +1,6 @@
 package UI;
 
+import CarSupplements.CarFactory;
 import Cars.Car;
 import Cars.Saab95;
 import Cars.Scania;
@@ -34,13 +35,19 @@ class CarController {
     }
 
     void addCar(Car car) {
-        if (cars.size() < 10)
             cars.add(car);
     }
 
+    void addCar() {
+        if (cars.size() < 10)
+            addCar(CarFactory.getInstance().createCar());
+    }
+
     void removeCar() {
-        if (!cars.isEmpty())
+        if (!cars.isEmpty()) {
             cars.remove(cars.get(cars.size() - 1));
+            CarFactory.getInstance().carRemoved();
+        }
     }
 
     public ArrayList<Car> getCars() {
