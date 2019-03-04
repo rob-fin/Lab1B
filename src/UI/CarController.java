@@ -34,7 +34,8 @@ class CarController {
     }
 
     void addCar(Car car) {
-        cars.add(car);
+        if (cars.size() < 10)
+            cars.add(car);
     }
 
     public ArrayList<Car> getCars() {
@@ -45,6 +46,7 @@ class CarController {
         if (cars.size() > 0 && cars.get(0).getCurrentSpeed() == 0)
             for (Car car : cars)
                 car.startEngine();
+
     }
 
     void stop() {
