@@ -8,7 +8,7 @@ import java.util.Random;
 public class CarFactory {
     private static final CarFactory instance = new CarFactory();
     private int currentX;
-    private Random rand = new Random();
+    private final Random rand = new Random();
 
     private CarFactory() {
         currentX = 0;
