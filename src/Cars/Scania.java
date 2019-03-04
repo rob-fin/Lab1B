@@ -18,6 +18,7 @@ public class Scania extends Car implements ITruckBed {
         wagon = new TruckBed();
         stopEngine();
     }
+
     @Override
     public void startEngine() {
         if (wagon.getWagonAngle() == 0)
@@ -25,16 +26,17 @@ public class Scania extends Car implements ITruckBed {
         else
             System.out.println("Cannot start engine when truck bed is up");
     }
+
     /**
-     *
      * @return Returns the trucks current wagon
      */
-    public TruckBed getWagon(){
+    public TruckBed getWagon() {
         return this.wagon;
     }
 
     /**
      * Calculates the speed factor which is just the engine power.
+     *
      * @return returns the speed factor.
      */
     public double speedFactor() {
@@ -43,6 +45,7 @@ public class Scania extends Car implements ITruckBed {
 
     /**
      * Sets the speed for the truck and the wagon
+     *
      * @param speed Speed to set
      */
     @Override
@@ -53,12 +56,13 @@ public class Scania extends Car implements ITruckBed {
 
     /**
      * Overrode because we need to check the wagon angle to see if it's all the way down
+     *
      * @param amount Specifies how much the speed should increase by [0,1]
      */
     @Override
     public void gas(double amount) {
         if (this.wagon.getWagonAngle() == 0)
-       super.gas(amount);
+            super.gas(amount);
     }
 
 }

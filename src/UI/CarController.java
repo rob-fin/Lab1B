@@ -37,6 +37,10 @@ class CarController {
         cars.add(car);
     }
 
+    void removeCar() {
+        cars.remove(cars.get(cars.size()-1));
+    }
+
     public ArrayList<Car> getCars() {
         return cars;
     }
@@ -74,6 +78,7 @@ class CarController {
             }
         }
     }
+
     void turboOff() {
         for (Car car : cars) {
             if (car instanceof Saab95) {
@@ -81,22 +86,25 @@ class CarController {
             }
         }
     }
-    void liftBed(){
+
+    void liftBed() {
         for (Car car : cars) {
             if (car instanceof Scania) {
                 ((Scania) car).getWagon().tiltWagon(65);
             }
         }
     }
-    void lowerBed(){
+
+    void lowerBed() {
         for (Car car : cars) {
             if (car instanceof Scania) {
                 ((Scania) car).getWagon().tiltWagon(-65);
             }
         }
     }
-    void moveAllCars(){
-        for (Car car : cars){
+
+    void moveAllCars() {
+        for (Car car : cars) {
             car.move();
             checkMove(car);
         }

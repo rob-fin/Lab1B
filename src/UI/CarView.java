@@ -33,6 +33,7 @@ class CarView extends JFrame {
     private JButton removeCarButton = new JButton("Remove car");
 
     private ArrayList<JButton> buttons = new ArrayList<>();
+
     CarView(String frameName, Controller controller, JPanel drawPanel) {
         this.drawPanel = drawPanel;
         this.controller = controller;
@@ -53,7 +54,7 @@ class CarView extends JFrame {
     private void initComponents(String title) {
 
         this.setTitle(title);
-        this.setPreferredSize(new Dimension(X,Y));
+        this.setPreferredSize(new Dimension(X, Y));
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         this.add(drawPanel);
@@ -71,7 +72,7 @@ class CarView extends JFrame {
 
         this.add(gasPanel);
 
-        controlPanel.setLayout(new GridLayout(2,4));
+        controlPanel.setLayout(new GridLayout(2, 4));
 
         controlPanel.add(gasButton, 0);
         controlPanel.add(turboOnButton, 1);
@@ -81,18 +82,18 @@ class CarView extends JFrame {
         controlPanel.add(turboOffButton, 5);
         controlPanel.add(lowerBedButton, 6);
         controlPanel.add(removeCarButton, 7);
-        controlPanel.setPreferredSize(new Dimension((X/2)+4, 200));
+        controlPanel.setPreferredSize(new Dimension((X / 2) + 4, 200));
         this.add(controlPanel);
         controlPanel.setBackground(Color.CYAN);
 
         startButton.setBackground(Color.blue);
         startButton.setForeground(Color.green);
-        startButton.setPreferredSize(new Dimension(X/5-15,200));
+        startButton.setPreferredSize(new Dimension(X / 5 - 15, 200));
         this.add(startButton);
 
         stopButton.setBackground(Color.red);
         stopButton.setForeground(Color.black);
-        stopButton.setPreferredSize(new Dimension(X/5-15,200));
+        stopButton.setPreferredSize(new Dimension(X / 5 - 15, 200));
         this.add(stopButton);
 
         // Make the frame pack all it's components by respecting the sizes if possible.
@@ -101,7 +102,7 @@ class CarView extends JFrame {
         // Get the computer screen resolution
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         // Center the frame
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
         // Make the frame visible
         this.setVisible(true);
         // Make sure the frame exits when "x" is pressed

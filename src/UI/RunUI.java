@@ -8,7 +8,6 @@ import CarSupplements.CarFactory;
 public class RunUI {
 
 
-
     public static void main(String[] args) {
         CarController cc = new CarController();
         cc.addCar(CarFactory.getInstance().createCar(CarFactory.carType.Volvo));

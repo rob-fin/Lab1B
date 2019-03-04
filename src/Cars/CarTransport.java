@@ -20,11 +20,12 @@ public class CarTransport extends Car {
 
     /**
      * Calculates the speed factor which is engine power with factor 0.8
+     *
      * @return returns the speed factor.
      */
     @Override
     public double speedFactor() {
-        return getEnginePower() * 0.8;
+        return getEnginePower() * 0.002;
     }
 
     /**
@@ -48,9 +49,10 @@ public class CarTransport extends Car {
 
     /**
      * Returns the trailer full of carsK
+     *
      * @return the trailer
      */
-    public CarTrailer getCarTrailer(){
+    public CarTrailer getCarTrailer() {
         return this.carTrailer;
     }
 
@@ -66,6 +68,7 @@ public class CarTransport extends Car {
 
     /**
      * need to override to inform the carTrailer of the speed
+     *
      * @param speed the speed
      */
     @Override
