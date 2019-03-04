@@ -36,7 +36,7 @@ public class TruckBed {
         if (checkAngle(newAngle))
             this.wagonAngle = newAngle;
         else
-            System.out.println("Cannot raise truck bed when car is moving");
+            System.out.println("Cannot tilt truck bed when car is moving");
     }
 
     /**

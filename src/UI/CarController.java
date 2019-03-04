@@ -1,9 +1,8 @@
 package UI;
 
 import CarSupplements.CarFactory;
-import Cars.Car;
-import Cars.Saab95;
-import Cars.Scania;
+import Cars.*;
+
 
 import java.util.ArrayList;
 
@@ -93,24 +92,24 @@ class CarController {
 
     void turboOn() {
         for (Car car : cars) {
-            if (car instanceof Saab95) {
-                ((Saab95) car).setTurboOn();
+            if (car instanceof ITurbo) {
+                ((ITurbo) car).setTurboOn();
             }
         }
     }
 
     void turboOff() {
         for (Car car : cars) {
-            if (car instanceof Saab95) {
-                ((Saab95) car).setTurboOff();
+            if (car instanceof ITurbo) {
+                ((ITurbo) car).setTurboOff();
             }
         }
     }
 
     void liftBed() {
         for (Car car : cars) {
-            if (car instanceof Scania) {
-                ((Scania) car).getWagon().tiltWagon(65);
+            if (car instanceof ITruckBed) {
+                ((ITruckBed) car).getWagon().tiltWagon(65);
             }
         }
     }
@@ -118,7 +117,7 @@ class CarController {
     void lowerBed() {
         for (Car car : cars) {
             if (car instanceof Scania) {
-                ((Scania) car).getWagon().tiltWagon(-65);
+                ((ITruckBed) car).getWagon().tiltWagon(-65);
             }
         }
     }
@@ -132,13 +131,10 @@ class CarController {
 
     //TODO 560 is hardcoded and should be changed
     private void checkMove(Car car) {
-        System.out.println(xBorder + " " + yBorder);
         if (car.getCurrentPosition().y > yBorder || car.getCurrentPosition().y < 0 ||
             car.getCurrentPosition().x > xBorder || car.getCurrentPosition().x < 0) {
             car.invertDirection();
         }
-        /*if (car.getCurrentPosition().y > 560 - 60 || car.getCurrentPosition().y < 0) {
-            car.invertDirection();
-        }*/
+
     }
 }
