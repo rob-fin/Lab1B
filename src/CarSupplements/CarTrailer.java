@@ -79,6 +79,7 @@ public class CarTrailer {
 
     /**
      * Returns the position of the ramp
+     *
      * @return the ramp's position
      */
     public Mode getRamp() {
@@ -90,11 +91,12 @@ public class CarTrailer {
      */
     public void setRamp(Mode ramp) {
         if (currentSpeed == 0)
-        this.ramp = ramp;
+            this.ramp = ramp;
     }
 
     /**
      * Returns the current speed of the CarTrailer
+     *
      * @return A double with the current speed
      */
     public double getCurrentSpeed() {
@@ -103,6 +105,7 @@ public class CarTrailer {
 
     /**
      * Sets the current speed of the car trailer
+     *
      * @param currentSpeed A double with the speed to set to.
      */
     public void setCurrentSpeed(double currentSpeed) {

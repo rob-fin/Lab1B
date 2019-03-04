@@ -7,9 +7,10 @@ import java.util.LinkedList;
 /**
  * Models a service station that can service different Cars or some specific car,
  * depending on how the class is instantiated
+ *
  * @param <T> The type of the Car: Either Car or a subclass thereof.
  */
-public class ServiceStation<T extends Car>  {
+public class ServiceStation<T extends Car> {
 
     private LinkedList<T> cars;
     private static final int MAX_CARS = 10;
@@ -20,6 +21,7 @@ public class ServiceStation<T extends Car>  {
 
     /**
      * Loads cars into the station
+     *
      * @param car car to be loaded
      */
     public void load(T car) {
@@ -31,6 +33,7 @@ public class ServiceStation<T extends Car>  {
 
     /**
      * Unloads a car and return it
+     *
      * @return the unloaded car
      */
     public T unload() {
@@ -42,6 +45,7 @@ public class ServiceStation<T extends Car>  {
 
     /**
      * Returns the amount of cars
+     *
      * @return amount of cars
      */
     public int getLoad() {

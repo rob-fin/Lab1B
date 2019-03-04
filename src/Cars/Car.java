@@ -211,6 +211,7 @@ public abstract class Car implements Movable {
 
     /**
      * Sets the speed of the Car.
+     *
      * @param speed The speed to change to.
      */
     public void setCurrentSpeed(double speed) {
@@ -233,12 +234,14 @@ public abstract class Car implements Movable {
 
     /**
      * Returns the speed factor of the Car.
+     *
      * @return A double with the speed factor of the Car.
      */
     public abstract double speedFactor();
 
     /**
      * Enters a service station.
+     *
      * @param s The service station to enter.
      * @return true for success, false otherwise.
      */
@@ -254,6 +257,7 @@ public abstract class Car implements Movable {
 
     /**
      * Sets the Car's loaded state
+     *
      * @param b true if it is being loaded, false if it's being unloaded.
      */
     public void setLoaded(boolean b) {
@@ -262,6 +266,7 @@ public abstract class Car implements Movable {
 
     /**
      * Gets the Car's loaded status.
+     *
      * @return true if it is loaded, false if it is not.
      */
     public boolean getLoaded() {
@@ -275,6 +280,7 @@ public abstract class Car implements Movable {
 
     /**
      * Returns the current direction of the car.
+     *
      * @return Direction type with the direction.
      */
     public Direction getDirection() {

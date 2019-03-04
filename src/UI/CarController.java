@@ -39,7 +39,7 @@ class CarController {
     }
 
     void removeCar() {
-        cars.remove(cars.get(cars.size()-1));
+        cars.remove(cars.get(cars.size() - 1));
     }
 
     public ArrayList<Car> getCars() {

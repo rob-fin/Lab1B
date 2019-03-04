@@ -23,24 +23,27 @@ public class Timer implements ActionListener {
         observers = new ArrayList<>();
         timer.start();
     }
-    Timer(CarController carC, ICarPainter observer){
+
+    Timer(CarController carC, ICarPainter observer) {
         this(carC);
         observers.add(observer);
     }
 
     /**
      * Add an observer to be notified when the cars need repainting
+     *
      * @param observer the observer to be added
      */
-    void addObserver(ICarPainter observer){
+    void addObserver(ICarPainter observer) {
         observers.add(observer);
     }
 
     /**
      * Remove an observer to be notified when the cars need repainting
+     *
      * @param observer the observer to be removed
      */
-    void removeObserver(ICarPainter observer){
+    void removeObserver(ICarPainter observer) {
         observers.remove(observer);
     }
 
@@ -50,7 +53,7 @@ public class Timer implements ActionListener {
         carC.moveAllCars();
         ArrayList<Car> cars = carC.getCars();
         // Notify all observers that something has happened and we need to repaint all the cars
-        for (ICarPainter observer : observers){
+        for (ICarPainter observer : observers) {
             observer.paintCars(cars);
         }
     }
