@@ -1,5 +1,8 @@
 package UI;
 
+import CarSupplements.CarFactory;
+import Cars.Saab95;
+
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -35,6 +38,11 @@ public class Controller implements ActionListener, ChangeListener {
             case "Lower Lift Bed":
                 carC.lowerBed();
                 break;
+            case "Add car":
+                carC.addCar(CarFactory.getInstance().createCar());
+                break;
+//            case "Remove car":
+//                carC.removeCar();
             case "Start all cars":
                 carC.start();
                 break;
