@@ -16,7 +16,6 @@ public class Saab95 extends SmallCar implements ITurbo {
         super(2, 125, 0, Color.red, "Saab95");
         turboOn = false;
         stopEngine();
-
     }
 
     /**
@@ -34,7 +33,6 @@ public class Saab95 extends SmallCar implements ITurbo {
     }
 
     /**
-     *
      * @return Returns the speedFactor
      */
     public double speedFactor() {
