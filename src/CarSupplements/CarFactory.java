@@ -48,7 +48,8 @@ public class CarFactory {
     }
 
     public void carRemoved() {
-        currentX -= 100;
+        if (currentX >= 0)
+            currentX -= 100;
     }
 
     public enum carType {Volvo, Saab, Scania, CarTransport}
