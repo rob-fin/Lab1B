@@ -17,7 +17,7 @@ public class Timer implements ActionListener {
     private CarController carC;
     private List<ICarPainter> observers;
 
-    Timer(CarController carC){
+    Timer(CarController carC) {
         this.carC = carC;
         timer = new javax.swing.Timer(delay, this);
         observers = new ArrayList<>();

@@ -2,10 +2,16 @@ package CarSupplements;
 
 import Cars.*;
 
+import java.awt.*;
+import java.util.Random;
+
 public class CarFactory {
     private static final CarFactory instance = new CarFactory();
+    private int currentX;
+    private final Random rand = new Random();
 
     private CarFactory() {
+        currentX = 0;
     }
 
     public static CarFactory getInstance() {
@@ -28,8 +34,18 @@ public class CarFactory {
                 car = new CarTransport();
                 break;
         }
+        car.setPosition(new Point(currentX, 0));
         car.stopEngine();
+        currentX += 100;
         return car;
+    }
+
+    public Car createCar() {
+        int randomNumber = rand.nextInt(carType.values().length);
+        carType newCarType = carType.values()[randomNumber];
+        return createCar(newCarType);
+
+
     }
 
     public enum carType {Volvo, Saab, Scania, CarTransport}
