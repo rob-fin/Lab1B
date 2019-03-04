@@ -9,6 +9,7 @@ import Cars.CarTransport;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -18,19 +19,27 @@ import java.util.ArrayList;
  * to the panel
  */
 public class DrawPanel extends JPanel implements ICarPainter {
+    private int imageDimensionX;
+    private int imageDimensionY;
     private ArrayList<Car> cars = new ArrayList<>();
 
     // Initializes the panel and reads the images
-    DrawPanel(int x, int y) {
+    DrawPanel(int x, int y, int imgX, int imgY) {
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);
+        this.imageDimensionX = imgX;
+        this.imageDimensionY = imgY;
     }
 
     private Image getImage(Car car) {
         try {
             String filePath = "/pics/" + car.getModelName() + ".jpg";
-            return ImageIO.read(DrawPanel.class.getResourceAsStream(filePath));
+            Image img = ImageIO.read(DrawPanel.class.getResourceAsStream(filePath));
+            if (((BufferedImage) img).getWidth() == imageDimensionX && ((BufferedImage) img).getHeight() == imageDimensionY)
+                return ImageIO.read(DrawPanel.class.getResourceAsStream(filePath));
+            else
+                throw new IOException("Wrong dimensions");
         } catch (IOException ex) {
             ex.printStackTrace();
         }

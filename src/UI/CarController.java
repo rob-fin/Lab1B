@@ -19,11 +19,19 @@ class CarController {
     private ArrayList<Car> cars;
     private int gasAmount;
     private int brakeAmount;
+    private int xBorder;
+    private int yBorder;
 
     CarController() {
         cars = new ArrayList<>();
         gasAmount = 0;
         brakeAmount = 0;
+    }
+
+    void setBorders(int x, int y) {
+        xBorder = x;
+        yBorder = y;
+
     }
 
     void setGasAmount(int gasAmount) {
@@ -124,8 +132,13 @@ class CarController {
 
     //TODO 560 is hardcoded and should be changed
     private void checkMove(Car car) {
-        if (car.getCurrentPosition().y > 560 - 60 || car.getCurrentPosition().y < 0) {
+        System.out.println(xBorder + " " + yBorder);
+        if (car.getCurrentPosition().y > yBorder || car.getCurrentPosition().y < 0 ||
+            car.getCurrentPosition().x > xBorder || car.getCurrentPosition().x < 0) {
             car.invertDirection();
         }
+        /*if (car.getCurrentPosition().y > 560 - 60 || car.getCurrentPosition().y < 0) {
+            car.invertDirection();
+        }*/
     }
 }
