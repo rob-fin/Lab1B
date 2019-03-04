@@ -1,11 +1,13 @@
 package CarSupplements;
 
+import java.awt.*;
 import java.util.Random;
 import Cars.*;
 
 public class CarFactory {
     private static final CarFactory instance = new CarFactory();
     Random rand = new Random();
+    private static int lastXPos = 0;
 
     private CarFactory() {
     }
@@ -31,6 +33,8 @@ public class CarFactory {
                 break;
         }
         car.stopEngine();
+        car.setPosition(new Point(lastXPos, 0));
+        lastXPos += 100;
         return car;
     }
 
