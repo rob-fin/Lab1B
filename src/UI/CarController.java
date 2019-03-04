@@ -39,7 +39,8 @@ class CarController {
     }
 
     void removeCar() {
-        cars.remove(cars.get(cars.size() - 1));
+        if (!cars.isEmpty())
+            cars.remove(cars.get(cars.size() - 1));
     }
 
     public ArrayList<Car> getCars() {
