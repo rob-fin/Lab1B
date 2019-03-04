@@ -29,17 +29,12 @@ public class DrawPanel extends JPanel implements ICarPainter {
 
     private Image getImage(Car car) {
         try {
-            if (car instanceof Volvo240)
-                return ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Volvo240.jpg"));
-            else if (car instanceof Saab95)
-                return ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Saab95.jpg"));
-            else if (car instanceof Scania)
-                return ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Scania.jpg"));
-            else if (car instanceof CarTransport)
-                return ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/CarTransport.jpg"));
+            String filePath = "/pics/" + car.getModelName() + ".jpg";
+            return ImageIO.read(DrawPanel.class.getResourceAsStream(filePath));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+
         return null;
     }
 
