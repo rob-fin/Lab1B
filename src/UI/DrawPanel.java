@@ -4,6 +4,7 @@ import Cars.Car;
 import Cars.Saab95;
 import Cars.Scania;
 import Cars.Volvo240;
+import Cars.CarTransport;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -33,6 +34,8 @@ public class DrawPanel extends JPanel implements ICarPainter {
                 return ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Saab95.jpg"));
             else if (car instanceof Scania)
                 return ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Scania.jpg"));
+            else if (car instanceof CarTransport)
+                return ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/CarTransport.jpg"));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
